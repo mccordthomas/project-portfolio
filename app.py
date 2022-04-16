@@ -1,4 +1,3 @@
-import re
 from flask import (render_template, redirect, 
                     url_for, request)
 from models import db, Project, app
@@ -10,7 +9,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/projects/new')
+@app.route('/projects/new', methods=['GET', 'POST'])
 # create route
 def add_project():
     if request.form:
