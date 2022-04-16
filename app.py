@@ -6,6 +6,7 @@ from models import db, Project, app
 @app.route('/')
 # homepage
 def index():
+
     return render_template('index.html')
 
 
@@ -41,7 +42,7 @@ def edit_project(id):
         project.repo_link=request.form['repo_link']
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('projectform.html', project=project)
+    return render_template('edit.html', project=project)
 
 
 @app.route('/about')
@@ -51,8 +52,11 @@ def about():
 
 @app.route('/projects/<id>/delete')
 # delete project
-def delete_project():
-    pass
+def delete_project(id):
+    project = Project.query.get_or_404(id)
+    db.session.delete(project)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
