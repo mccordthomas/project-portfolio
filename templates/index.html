@@ -10,7 +10,7 @@
             <h2>About Me</h2>
             <p>
                 I'm a junior programmer and continuous learner.  
-                I still don't know as much as I want to know, but I try to learn a little more every day.
+                I still don't know as much as I want, but I try to learn a little more every day.
             </p>
             <div id="triangle1"></div>
             <div id="triangle2"></div>
@@ -31,66 +31,25 @@
             <i class="fas fa-file-code"></i>
             <h2>Projects</h2>
             <div id="project-list">
-                <div id="project1" class="a-project">
-                    <h3>Project Title</h3>
-                    <a href="#" class="github-btn">
-                        <i class="fab fa-github"></i>
-                        View on GitHub
-                    </a>
-                    <p>
-                        Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                    <p>
-                        Skills: Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                </div>
-                <div id="project2" class="a-project">
-                    <h3>Project Title</h3>
-                    <a href="#" class="github-btn">
-                        <i class="fab fa-github"></i>
-                        View on GitHub
-                    </a>
-                    <p>
-                        Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                    <p>
-                        Skills: Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                </div>
-                <div id="project3" class="a-project">
-                    <h3>Project Title</h3>
-                    <a href="#" class="github-btn">
-                        <i class="fab fa-github"></i>
-                        View on GitHub
-                    </a>
-                    <p>
-                        Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                    <p>
-                        Skills: Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                </div>
-                <div id="project4" class="a-project">
-                    <h3>Project Title</h3>
-                    <a href="#" class="github-btn">
-                        <i class="fab fa-github"></i>
-                        View on GitHub
-                    </a>
-                    <p>
-                        Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                    <p>
-                        Skills: Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
-                    </p>
-                </div>
+                {% for project in projects %}
+                    <div id="{{ project.id }}" class="a-project">
+                        <h3>{{ project.title }}</h3>
+                        <a href="{{ project.github }}" class="github-btn">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                        <p>
+                            {{ project.description }}
+                        </p>
+                        <p>
+                            {% for skill in project.skills.split(',') %}
+                                <li>
+                                    {{ skill }} 
+                                </li>
+                            {% endfor %}
+                        </p>
+                    </div>
+                {% endfor %}
             </div>
             <div id="triangle4"></div>
         </section>

@@ -7,14 +7,13 @@ from datetime import datetime
 @app.route('/')
 # homepage
 def index():
-
-    return render_template('index.html')
+    projects = Project.query.all()
+    return render_template('index.html', projects=projects)
 
 
 @app.route('/projects/new', methods=['GET', 'POST'])
 # create route
 def add_project():
-
     if request.form:
         date = datetime.strptime(request.form['date'], '%Y-%m')
         new_project = Project(title=request.form['title'], date=date, 
