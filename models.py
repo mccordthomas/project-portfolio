@@ -14,7 +14,7 @@ class Project(db.Model):
     date = db.Column('Date', db.DateTime)
     description = db.Column('Description', db.Text)
     skills = db.Column('Skills', db.Text)
-    repo_link = db.Column('GitHub Repo Link', db.Text)
+    github = db.Column('GitHub Repo Link', db.Text)
 
     def __repr__(self):
         return f'''<Project (Title: {self.title} | Date: {self.date} | Description: {self.description} | Skills: {self.skills} | Repo Link: {self.repo_link}'''

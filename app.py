@@ -1,6 +1,7 @@
 from flask import (render_template, redirect, 
                     url_for, request)
 from models import db, Project, app
+from datetime import datetime
 
 
 @app.route('/')
@@ -13,14 +14,16 @@ def index():
 @app.route('/projects/new', methods=['GET', 'POST'])
 # create route
 def add_project():
+
     if request.form:
-        new_project = Project(title=request.form['title'], date=request.form['date'], 
+        date = datetime.strptime(request.form['date'], '%Y-%m')
+        new_project = Project(title=request.form['title'], date=date, 
                         description=request.form['description'], skills=request.form['skills'], 
-                        repo_link=request.form['repo_link'])
+                        github=request.form['github'])
         db.session.add(new_project)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('projectform.html', methods=['GET', 'POST'])
+    return render_template('projectform.html')
 
 
 @app.route('/projects/<id>')
@@ -39,7 +42,7 @@ def edit_project(id):
         project.date=request.form['date']
         project.description=request.form['description']
         project.skills=request.form['skills']
-        project.repo_link=request.form['repo_link']
+        project.github=request.form['github']
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('edit.html', project=project)
