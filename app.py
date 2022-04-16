@@ -45,11 +45,15 @@ def edit_project(id):
     return render_template('projectform.html', project=project)
 
 
+@app.route('/about')
+def about():
+    pass
+
+
 @app.route('/projects/<id>/delete')
 # delete project
 def delete_project():
     pass
-
 
 
 if __name__ == '__main__':
