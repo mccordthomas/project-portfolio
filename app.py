@@ -49,7 +49,11 @@ def edit_project(id):
 
 @app.route('/about')
 def about():
-    pass
+    return render_template('about.html')
+
+@app.route('/skills')
+def skills():
+    return render_template('skills.html')
 
 
 @app.route('/projects/<id>/delete')
