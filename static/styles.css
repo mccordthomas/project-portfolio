@@ -2,11 +2,11 @@
 Colors
 *******/
 :root {
-    --primary-text: #51475c;
+    --primary-text: #423055;
     --secondary-text: #ab6c82;
-    --primary: #475c7a;
-    --secondary: #fcbb6d;
-    --accent: #d8737f;
+    --primary: #566858;
+    --secondary: #5f82b4;
+    --accent: #c9c9c9;
     --white:  #fff;
 }
 
@@ -219,6 +219,29 @@ Skills
     list-style-type: none;
     line-height: 50px;
 }
+
+
+/*******
+Skills Page
+*******/
+
+#skills-page ul {
+    display: outside;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 50;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+#skills-page h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
 
 /*******
 Projects
