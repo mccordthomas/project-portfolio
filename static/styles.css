@@ -229,22 +229,22 @@ Skills Page
 #skills-page {
     text-align: center;
     background-color: var(--secondary);
-    padding: 5%;
+    padding: 2rem 15%;
     position: relative;
 }
 
 #skills-page h2 {
     color: var(--white);
-    margin-top: 1rem;
-    margin-bottom: 0px;
+    text-align: center;
+    margin: 0px 0px 25px;
 }
 
 #skills-page h3 {
     font-size: 35px;
     font-weight: bold;
     color: var(--white);
-    margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -252,34 +252,37 @@ Skills Page
     display: outside;
     color: var(--white);
     text-align: left;
-    margin-top: 0px;
     padding-left: 0pt;
-    padding-right: 5px;
 }
 
 #skills-page li {
     font-size: 25px;
     color: var(--white);
     list-style-position: inside;
-    left: y;
 }
 
 #main {
     display: inline-block;
-    vertical-align: middle;
-    width:100%;
+    vertical-align: center;
+    width:125%;
     text-align: center;
-    padding: 5%;
+    padding-top: -10px;
+    align-content: space-between;
 }
 
 #container {
-    width:50%;
+    width: 49%;
     background: var(--secondary);
+    margin-right: 1%;
    }
 
+#right-box {
+    padding-right: -20px;
+}
+
 .list {
-    float:left;
-    width:49.9%;
+    float: left;
+    width: 50%;
    }
    
 .list div {
@@ -596,8 +599,7 @@ Form
 EXCEEDS - About Page
 ********************/
 
-#about-page,
-#skills-page {
+#about-page {
     background-color: var(--secondary);
     position: relative;
     padding: 3rem 5%;
@@ -627,14 +629,12 @@ EXCEEDS - About Page
     right: 0px;
 }
 
-#about-page h2,
-#skills-page h2 {
+#about-page h2 {
     color: var(--white);
     margin-bottom: 4rem;
 }
 
-#about-page p,
-#skills-page p {
+#about-page p {
     margin-top: 2rem;
     color: var(--white);
     text-align: left;
@@ -699,8 +699,7 @@ Media Queries
     #about,
     #projects,
     #contact,
-    #about-page,
-    #skills-page {
+    #about-page {
         padding: 5% 15%;
     }
 
