@@ -3,7 +3,7 @@ Colors
 *******/
 :root {
     --primary-text: #2a3264;
-    --secondary-text: #ab6c82;
+    --secondary-text: #817375;
     --primary: #566858;
     --secondary: #6b8fc0;
     --accent: #bbbbbb;
@@ -15,7 +15,7 @@ FONT
 *******/
 
 * {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Dosis', sans-serif;
     color: var(--primary-text);
 }
 
