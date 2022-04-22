@@ -644,6 +644,7 @@ EXCEEDS - About Page
 #about-page a,
 #skills-page a {
     background-color: var(--accent);
+    position: relative; nav-down: 10px;
     text-decoration: none;
     color: var(--white);
     border-radius: 10px;
