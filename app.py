@@ -1,7 +1,7 @@
 from flask import (render_template, redirect, 
                     url_for, request)
 from models import db, Project, app
-from datetime import datetime
+from datetime import datetime, date
 
 
 @app.route('/')
@@ -53,7 +53,8 @@ def edit_project(id):
     project = Project.query.get_or_404(id)
     if request.form:
         project.title=request.form['title']
-        project.date=request.form['date']
+        date = datetime.strptime(request.form['date'], '%Y-%m')
+        project.date=date
         project.description=request.form['description']
         project.skills=request.form['skills']
         project.github=request.form['github']
