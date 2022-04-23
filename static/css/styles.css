@@ -478,10 +478,12 @@ Description - Detail
 #project-desc h2 {
     padding-top: 3rem;
     margin-bottom: 3rem;
+    color: var(--white);
 }
 
 #project-desc p {
     text-align: left;
+    color: var(--white);
     padding-bottom: 4rem;
 }
 

@@ -11,9 +11,22 @@ def index():
     return render_template('index.html', projects=projects)
 
 
+@app.route('/about')
+def about():
+    projects = Project.query.all()
+    return render_template('about.html', projects=projects)
+
+
+@app.route('/skills')
+def skills():
+    projects = Project.query.all()
+    return render_template('skills.html', projects=projects)
+
+
 @app.route('/projects/new', methods=['GET', 'POST'])
 # create route
 def add_project():
+    projects = Project.query.all()
     if request.form:
         date = datetime.strptime(request.form['date'], '%Y-%m')
         new_project = Project(title=request.form['title'], date=date, 
@@ -22,19 +35,21 @@ def add_project():
         db.session.add(new_project)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('projectform.html')
+    return render_template('projectform.html', projects=projects)
 
 
 @app.route('/projects/<id>')
 # detail route
 def get_info(id):
+    projects = Project.query.all()
     project = Project.query.get_or_404(id)
-    return render_template('detail.html', project=project)
+    return render_template('detail.html', project=project, projects=projects)
 
 
 @app.route('/projects/<id>/edit', methods=['GET', 'POST'])
 # edit project
 def edit_project(id):
+    projects = Project.query.all()
     project = Project.query.get_or_404(id)
     if request.form:
         project.title=request.form['title']
@@ -44,16 +59,7 @@ def edit_project(id):
         project.github=request.form['github']
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('edit.html', project=project)
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-@app.route('/skills')
-def skills():
-    return render_template('skills.html')
+    return render_template('edit.html', project=project, projects=projects)
 
 
 @app.route('/projects/<id>/delete')
