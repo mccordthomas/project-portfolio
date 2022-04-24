@@ -229,7 +229,7 @@ Skills Page
 #skills-page {
     text-align: center;
     background-color: var(--secondary);
-    padding: 2rem 15%;
+    padding: 4rem 15%;
     position: relative;
 }
 
@@ -274,6 +274,7 @@ Skills Page
     width: 49%;
     background: var(--secondary);
     margin-right: 1%;
+    margin-bottom: 35px;
    }
 
 #right-box {
@@ -640,6 +641,8 @@ EXCEEDS - About Page
     margin-top: 2rem;
     color: var(--white);
     text-align: left;
+    line-height: 45px;
+    text-indent: 5%;
     margin-bottom: 5rem;
 }
 

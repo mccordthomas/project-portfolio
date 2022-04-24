@@ -28,8 +28,7 @@ def skills():
 def add_project():
     projects = Project.query.all()
     if request.form:
-        date = datetime.strptime(request.form['date'], '%Y-%m')
-        new_project = Project(title=request.form['title'], date=date, 
+        new_project = Project(title=request.form['title'], date=datetime.strptime(request.form['date'], '%Y-%m'), 
                         description=request.form['description'], skills=request.form['skills'], 
                         github=request.form['github'])
         db.session.add(new_project)
@@ -53,8 +52,7 @@ def edit_project(id):
     project = Project.query.get_or_404(id)
     if request.form:
         project.title=request.form['title']
-        date = datetime.strptime(request.form['date'], '%Y-%m')
-        project.date=date
+        project.date= datetime.strptime(request.form['date'], '%Y-%m')
         project.description=request.form['description']
         project.skills=request.form['skills']
         project.github=request.form['github']
